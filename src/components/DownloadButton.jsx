@@ -8,7 +8,7 @@ export default function DownloadButton() {
   const [isFinished, setIsFinished] = useState(false);
   const items = useStoreState((state) => state.items);
   if (isFinished) {
-    return <CSVLink data={items}>satan</CSVLink>;
+    return <CSVLink data={items}>Download CSV</CSVLink>;
   }
   return <button onClick={() => setIsFinished(!false)}>Finish</button>;
 }

@@ -9,8 +9,7 @@ export const store = createStore(
         state.items = payload.split("\n");
       }),
       addItem: action((state, payload) => {
-        if (payload.length < 11 || payload.length > 12)
-          return alert("Da va kje heilt rett, prøv igjen....homo");
+        if (payload.length < 11 || payload.length > 12) return;
         state.items.push({
           id: calcID(state.items),
           mac: payload.length === 12 ? payload : undefined,
@@ -23,7 +22,6 @@ export const store = createStore(
           state.items[state.items.length - 1].mac = payload;
         else if (payload.length === 11)
           state.items[state.items.length - 1].sn = payload;
-        else alert("Scan bedre, homo");
       }),
     },
     {

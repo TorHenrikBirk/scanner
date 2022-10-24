@@ -1,8 +1,8 @@
 {
-  "name": "scanner2",
-  "productName": "scanner2",
+  "name": "ci-scanner",
+  "productName": "CI-Scanner",
   "version": "1.0.0",
-  "description": "My Electron application description",
+  "description": "Scan som bare faen, med software fra Birkelaen!",
   "main": ".webpack/main",
   "scripts": {
     "start": "electron-forge start",
@@ -13,8 +13,8 @@
   },
   "keywords": [],
   "author": {
-    "name": "Tormod Aase",
-    "email": "toraas@equinor.com"
+    "name": "Tor Henrik og Tormod :)",
+    "email": "torhenrikbirk@gmail.com"
   },
   "license": "MIT",
   "config": {
@@ -24,7 +24,7 @@
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
-            "name": "scanner2"
+            "name": "CI-Scanner"
           }
         },
         {
