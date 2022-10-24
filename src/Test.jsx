@@ -9,13 +9,17 @@ export default function Test() {
   const dispatch = useStoreDispatch();
   const [value, setValue] = useState("");
 
-  function onSubmit() {
+  function onSubmit(e) {
+    e.preventDefault();
     if (items.length === 0) {
-      return dispatch.addItem(value);
+      dispatch.addItem(value);
+      setValue("");
+      return;
     }
     const lastItem = items[items.length - 1];
     if (lastItem.mac && lastItem.sn) dispatch.addItem(value);
     else dispatch.updateItem(value);
+    setValue("");
   }
 
   return (

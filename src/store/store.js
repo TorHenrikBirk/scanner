@@ -9,7 +9,8 @@ export const store = createStore(
         state.items = payload.split("\n");
       }),
       addItem: action((state, payload) => {
-        if (payload.length < 11 || payload.length > 12) return alert('Da va kje heilt rett, prøv igjen....homo');
+        if (payload.length < 11 || payload.length > 12)
+          return alert("Da va kje heilt rett, prøv igjen....homo");
         state.items.push({
           id: calcID(state.items),
           mac: payload.length === 12 ? payload : undefined,
@@ -26,13 +27,13 @@ export const store = createStore(
       }),
     },
     {
-      allow: ['items'],
+      allow: ["items"],
       storage: localStorage,
     }
   )
 );
 
 function calcID(array) {
-  const number = 900 + array.length-1; //"fiksa da"
+  const number = 900 + array.length; //"fiksa da"
   return "SRP-CWBS" + number.toString();
 }
